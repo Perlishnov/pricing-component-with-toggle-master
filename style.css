@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --Linear-gradient: hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+  --Font: "Montserrat", sans-serif;
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+}
+html {
+  font-family: var(--Font);
+}
+body {
+  background-color: var(--Very-Light-Grayish-Blue);
+}
+/* backgrounds section  */
+.background {
+  position: absolute;
+}
+.bg-top {
+  top: 0;
+  right: 0;
+  z-index: -1;
+}
+.bg-bottom {
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* heading section  */
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--Grayish-Blue);
+  margin-bottom: 1rem;
+}
+
+/* toggle section  */
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.switch-container > * {
+  margin-inline: 0.5rem;
+}
+.switch-container > span {
+  color: var(--Grayish-Blue);
+  font-size: 0.8rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+input:checked + .slider {
+  background-image: linear-gradient(var(--Linear-gradient));
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--Linear-gradient);
+}
+input:checked + .slider::before {
+  transform: translateX(20px);
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round::before {
+  border-radius: 50%;
+}
+
+/* pricing section  */
+
+.pricing-component,
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.pricing-component {
+  margin: 2.5rem;
+}
+
+/* Cards section  */
+.container-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-flex > * {
+  width: max-content;
+  padding: 1rem;
+  margin: 1rem 0.2rem;
+}
+.cards {
+  background-color: #fff;
+  padding: 1.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.cards > * {
+  margin: 0.5rem 0;
+}
+.cards > .plan-type {
+  font-size: 1rem;
+  color: var(--Dark-Grayish-Blue);
+}
+.cards > .pricing {
+  font-size: 3rem;
+  color: var(--Dark-Grayish-Blue);
+}
+.feature-container > * {
+  padding: 0.5rem 0;
+  color: var(--Dark-Grayish-Blue);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--Light-Grayish-Blue);
+}
+.feature-container > div:last-child {
+  border-bottom: 1px solid var(--Light-Grayish-Blue);
+}
+
+.feature-container {
+  text-align: center;
+}
+
+button {
+  padding: 0.3rem 2rem;
+  width: 100%;
+  background-image: linear-gradient(var(--Linear-gradient));
+  border: none;
+  font-family: var(--Font);
+  color: #fff;
+  border-radius: 3px;
+  letter-spacing: 0.1rem;
+}
+
