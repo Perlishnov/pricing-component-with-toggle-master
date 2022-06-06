@@ -10,6 +10,8 @@
   --Light-Grayish-Blue: hsl(234, 14%, 74%);
   --Grayish-Blue: hsl(233, 13%, 49%);
   --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+  --Gradient-Purple: hsl(237, 63%, 64%);
+  --Gadrient-Lila: hsl(236, 72%, 79%);
 }
 html {
   font-family: var(--Font);
@@ -135,6 +137,10 @@ input:checked + .slider::before {
   background-color: #fff;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
+  width: 100%;
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
 }
 .cards > * {
   margin: 0.5rem 0;
@@ -147,18 +153,17 @@ input:checked + .slider::before {
   font-size: 3rem;
   color: var(--Dark-Grayish-Blue);
 }
+.feature-container {
+  text-align: center;
+}
 .feature-container > * {
   padding: 0.5rem 0;
-  color: var(--Dark-Grayish-Blue);
+  color: var(--Grayish-Blue);
   font-size: 0.9rem;
   border-top: 1px solid var(--Light-Grayish-Blue);
 }
 .feature-container > div:last-child {
   border-bottom: 1px solid var(--Light-Grayish-Blue);
-}
-
-.feature-container {
-  text-align: center;
 }
 
 button {
@@ -169,6 +174,42 @@ button {
   font-family: var(--Font);
   color: #fff;
   border-radius: 3px;
-  letter-spacing: 0.1rem;
+}
+a {
+  color: #fff;
+  text-decoration-line: none;
+  letter-spacing: 0.1px;
+}
+.card-special {
+  background-image: linear-gradient(var(--Linear-gradient));
+  padding: 2.5rem 1rem;
+}
+/* .card-special > .plan-type,.card-special > .pricing,.card-special > .feature-container > div {
+  color: #fff;
+} */
+
+.card-special :is(.plan-type, .pricing, .feature-container div) {
+  color: #fff;
+}
+.card-special button {
+  background-color: #fff;
+  background-image: none;
+}
+.card-special button a {
+  color: var(--Gradient-Purple);
 }
 
+/* media queries */
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container-flex {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cards {
+    width: 100%;
+  }
+  .feature-container div {
+    font-size: 1rem;
+  }
+}
